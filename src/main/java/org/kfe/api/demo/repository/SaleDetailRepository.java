@@ -1,4 +1,4 @@
 package org.kfe.api.demo.repository;
 
-public class SaleDetailRepository {
+public interface SaleDetailRepository {
 }
