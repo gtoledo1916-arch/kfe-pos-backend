@@ -4,6 +4,8 @@ import org.kfe.api.demo.dto.LoginRequestDTO;
 import org.kfe.api.demo.dto.RegisterRequestDTO;
 import org.kfe.api.demo.entity.Role;
 import org.kfe.api.demo.entity.User;
+import org.kfe.api.demo.exception.CredencialesInvalidasException;
+import org.kfe.api.demo.exception.UsuarioNoEncontradoException;
 import org.kfe.api.demo.repository.UserRepository;
 import org.kfe.api.demo.security.JwtService;
 import org.kfe.api.demo.service.AuthService;
@@ -26,11 +28,13 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public String login(LoginRequestDTO request) {
 
+        // Si el email no existe → 404
         User user = userRepository.findByEmail(request.getEmail())
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+                .orElseThrow(() -> new UsuarioNoEncontradoException(request.getEmail()));
 
+        // Si el password es incorrecto → 401
         if (!encoder.matches(request.getPassword(), user.getPassword())) {
-            throw new RuntimeException("Credenciales inválidas");
+            throw new CredencialesInvalidasException();
         }
 
         return jwtService.generateToken(user);
@@ -44,7 +48,6 @@ public class AuthServiceImpl implements AuthService {
         }
 
         User user = new User();
-
         user.setUsername(request.getUsername());
         user.setApellidoPaterno(request.getApellidoPaterno());
         user.setApellidoMaterno(request.getApellidoMaterno());

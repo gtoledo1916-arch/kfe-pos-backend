@@ -5,17 +5,3 @@ public class RolInvalidoException extends RuntimeException {
         super("El rol '" + rol + "' no es válido. Roles permitidos: ADMIN, GERENTE, CAJERO");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
