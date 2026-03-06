@@ -59,14 +59,44 @@ public class Sale {
     public List<SaleDetail> getDetails()       { return details; }
 
     // SETTERS
-    public void setId(Long id)                                      { this.id = id; }
-    public void setCajero(User cajero)                              { this.cajero = cajero; }
-    public void setStatus(SaleStatus status)                        { this.status = status; }
-    public void setCanceladoPor(User canceladoPor)                  { this.canceladoPor = canceladoPor; }
-    public void setFechaCancelacion(LocalDateTime fechaCancelacion) { this.fechaCancelacion = fechaCancelacion; }
-    public void setCreatedAt(LocalDateTime createdAt)               { this.createdAt = createdAt; }
-    public void setSubtotal(Double subtotal)                        { this.subtotal = subtotal; }
-    public void setIva(Double iva)                                  { this.iva = iva; }
-    public void setTotal(Double total)                              { this.total = total; }
-    public void setDetails(List<SaleDetail> details)                { this.details = details; }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setDetails(List<SaleDetail> details) {
+        this.details = details;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
+    }
+
+    public void setIva(Double iva) {
+        this.iva = iva;
+    }
+
+    public void setSubtotal(Double subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setFechaCancelacion(LocalDateTime fechaCancelacion) {
+        this.fechaCancelacion = fechaCancelacion;
+    }
+
+    public void setCanceladoPor(User canceladoPor) {
+        this.canceladoPor = canceladoPor;
+    }
+
+    public void setStatus(SaleStatus status) {
+        this.status = status;
+    }
+
+    public void setCajero(User cajero) {
+        this.cajero = cajero;
+    }
 }
