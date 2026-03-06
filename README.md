@@ -123,15 +123,6 @@ Hibernate crea las tablas automáticamente (`ddl-auto=update`). Resumen del mode
 | stock | INT | Stock disponible |
 | category_id | BIGINT (FK) | Categoría del producto |
 
-### product_variants
-
-| Campo | Tipo | Descripción |
-|-------|------|-------------|
-| id | BIGINT (PK) | ID autoincremental |
-| product_id | BIGINT (FK) | Producto asociado |
-| size | VARCHAR | Tamaño (ej: Grande, Mediano) |
-| price | DECIMAL | Precio de la variante |
-| stock | INT | Stock de la variante |
 
 ### sales
 
