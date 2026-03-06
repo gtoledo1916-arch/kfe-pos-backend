@@ -211,8 +211,3 @@ demo/
     └── application.properties
 ```
 
----
-
-## Licencia
-
-Proyecto interno PROSUR.
